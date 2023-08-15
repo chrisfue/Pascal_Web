@@ -16,8 +16,8 @@ def index():
         ints = pascal.predict_class(user_message)
         
         
-        bot_response = pascal.get_response(ints,pascal.intents)
-        chat_history.append(("bot", bot_response))
+        #bot_response = pascal.get_response(ints,pascal.intents)
+        #chat_history.append(("bot", bot_response))
 
     return render_template('index.html', chat_history=chat_history)
 
