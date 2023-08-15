@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
 from resources.Pascal import Chatbot
+import nltk
+
+nltk.download('punkt')
 
 app = Flask(__name__)
 
