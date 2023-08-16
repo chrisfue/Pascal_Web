@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request
 from resources.Pascal import Chatbot
 import nltk
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
+
 
 nltk.download('punkt')
 nltk.download('wordnet')
