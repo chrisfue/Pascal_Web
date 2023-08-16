@@ -17,7 +17,7 @@ def index():
         chat_history.append(("user", user_message))
 
         # Simulate bot response for demonstration purposes
-        ints = pascal.predict_class(user_message)
+        #ints = pascal.predict_class(user_message)
         
         
         #bot_response = pascal.get_response(ints,pascal.intents)
