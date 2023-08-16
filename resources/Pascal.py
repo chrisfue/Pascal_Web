@@ -7,9 +7,15 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 
+
+
+
+
+
 class Chatbot:
 
     def __init__(self,resource_path):
+        
         self.lemmatizer = WordNetLemmatizer()
         self.intents = json.loads(open(str(resource_path)+'intents.json').read())
     
