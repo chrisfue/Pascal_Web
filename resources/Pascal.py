@@ -12,6 +12,7 @@ from keras.models import load_model
 
 
 
+
 class Chatbot:
 
     def __init__(self,resource_path):
