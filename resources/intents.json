@@ -13,7 +13,7 @@
 ]},
     {"tag": "strengths",
     "patterns": ["What are your skills","What are Christoph's skills","What is he good at", "How does he exceed","What makes him better"],
-    "responses": ["Aside from being a capable programmer, he has a creative way of thinking as shown in his finding workarounds in the current limitations of the softare packages he trains people in. Further he also skilled at explaining complex topics to various audiences with different levels of experience in the field."
+    "responses": ["Aside from being a capable programmer, he has a creative way of thinking as shown in his finding workarounds in the current limitations of the software packages he trains people in. Further he is also skilled at explaining complex topics to various audiences with different levels of experience in the field."
 ]},
     {"tag": "weaknesses",
     "patterns":["what is his greatest weakness","what are his weaknesses","what is he not good at"],
@@ -25,7 +25,7 @@
 ]},
     {"tag":"work",
     "patterns":["what does he do at work","how does a day of work look like","what is his job"],
-    "responses":["Christoph works as a Sales Manager in the international sales at RIEGL Laser Measurement Systems GmbH. His work consists mainly of 4 different sections: sales work, training, support and system calibration. \nSales work starts with gathering information of a potential customer's requirements and ressources upon their initial inquiry and depending on the case can go on to creating a customized quotation and negotiating based thereon.\nSupport covers mostly help in case of customers not correctly using system or software and somtimes first level support for technival issues.\nTraining includes explaining the use of the system and the processing software to customers, either online in web meetings, or in-person at our or the customer's site.\nSystem calibration covers the calculation of optimized parameters for the system to minimize discrepancies and the automation of these tasks."
+    "responses":["Christoph works as a Sales Manager in the international sales at RIEGL Laser Measurement Systems GmbH. His work consists mainly of 4 different sections: sales work, training, support and system calibration. \nSales work starts with gathering information of a potential customer's requirements and ressources upon their initial inquiry and depending on the case can go on to creating a customized quotation and negotiating based thereon.\nSupport covers mostly help in case of customers not correctly using system or software and somtimes first level support for technival issues.\nTraining includes explaining the use of the system and the processing software to customers, either online in web meetings, or in-person at our or the customer's site.\nSystem calibration covers the calculation of optimized parameters for the system to minimize measurement discrepancies and the automation of these tasks."
 ]},
 {"tag":"languages",
 "patterns":["what languages can he speak","languages"],
@@ -33,6 +33,6 @@
 ]},
 {"tag":"prog languages",
 "patterns":["what do you programm in","what do you code in","what programming languages do you know","what coding languages does he know"],
-"responses":["Privately and at work Christoph works mostly in Python, as most of the APIs he uses are made for it. From his university studies he is also familiar with C, C++ and Java."
+"responses":["Privately and at work Christoph works mostly in Python, as most of the APIs he uses are made for it. From his university studies he is also familiar with C, C++ and Java and has also worked using SQL."
 ]}
 ]}
