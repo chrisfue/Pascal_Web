@@ -29,7 +29,7 @@ def index():
         chat_history.append(("bot", bot_response))
     
     if request.method=='GET':
-        chat_history.clear
+        chat_history.clear()
 
     return render_template('index.html', chat_history=chat_history)
 
