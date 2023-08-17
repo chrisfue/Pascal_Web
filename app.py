@@ -22,15 +22,13 @@ def index():
         user_message = request.form['user_input']
         chat_history.append(("user", user_message))
 
-        
+        # Simulate bot response for demonstration purposes
         ints = pascal.predict_class(user_message)
         
         
         bot_response = pascal.get_response(ints,pascal.intents)
         chat_history.append(("bot", bot_response))
-    else:
-        chat_history=[]
-
+    
     return render_template('index.html', chat_history=chat_history)
 
 
