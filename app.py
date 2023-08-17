@@ -27,6 +27,9 @@ def index():
         
         bot_response = pascal.get_response(ints,pascal.intents)
         chat_history.append(("bot", bot_response))
+    
+    else: 
+        chat_history.clear
 
     return render_template('index.html', chat_history=chat_history)
 
