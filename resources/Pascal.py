@@ -12,6 +12,7 @@ from keras.models import load_model
 
 class Chatbot:
 
+    #initialize and load necessary files
     def __init__(self, resource_path):
         self.lemmatizer = tf.lite.Interpreter(model_path=str(resource_path) + 'model.tflite')
         self.intents = json.loads(open(str(resource_path) + 'intents.json').read())
@@ -19,11 +20,13 @@ class Chatbot:
         self.classes = pickle.load(open(str(resource_path) + 'classes.pkl', 'rb'))
         self.lemmatizer_nltk = WordNetLemmatizer()
 
+    #split text to tokens and lemmatize them
     def clean_up_sentence(self, sentence):
         sentence_words = nltk.word_tokenize(sentence)
         sentence_words = [self.lemmatizer_nltk.lemmatize(word) for word in sentence_words]
         return sentence_words
 
+    #create bag of words
     def bag_of_Words(self, sentence):
         sentence_words = self.clean_up_sentence(sentence)
         bag = [0] * len(self.words)
@@ -33,6 +36,7 @@ class Chatbot:
                     bag[i] = 1
         return np.array(bag)
 
+    #predict class based on processed input
     def predict_class(self, sentence):
         bow = self.bag_of_Words(sentence)
         self.lemmatizer.allocate_tensors()
@@ -51,6 +55,7 @@ class Chatbot:
             return_list.append({'intent': self.classes[r[0]], 'probability': str(r[1])})
         return return_list
 
+    #retrieve response based on predicted class.
     def get_response(self, intents_list, intents_json):
         tag = intents_list[0]['intent']
         list_of_intents = intents_json['intents']
