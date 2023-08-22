@@ -47,7 +47,7 @@ class Chatbot:
         self.lemmatizer.invoke()
         res = self.lemmatizer.get_tensor(output_details[0]['index'])[0]
 
-        ERROR_THRESHOLD = 0.85
+        ERROR_THRESHOLD = 0.7
         results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
         results.sort(key=lambda x: x[1], reverse=True)
         return_list = []
