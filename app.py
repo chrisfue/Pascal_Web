@@ -27,11 +27,12 @@ def index():
         #analyze input
         ints = pascal.predict_class(user_message)
         #retrieve response
-        bot_response = pascal.get_response(ints,pascal.intents)
+        if not ints: 
+            bot_response=("I am afraid I cannot answer that, please rephrase your question or ask me something else.")
+        else:
+            bot_response = pascal.get_response(ints,pascal.intents)
         #append response to chat list
-         #append response to chat list
-        if not bot_response:
-            chat_history.append(("bot","I am afraid I cannot answer that, please rephrase your question or ask me something else."))
+         
         chat_history.append(("bot", bot_response))
     
     #clear chat when website is called anew
