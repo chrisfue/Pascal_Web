@@ -1,6 +1,6 @@
 {"intents": [
     {"tag": "greetings",
-    "patterns": ["hello","hey","hola","hi","good day","good morning","greetings","What's up","hallo","guten tag","Guten Morgen"],
+    "patterns": ["hi","hello","good day","greetings","guten tag"],
     "responses":["Hello, I am Pascal, Christoph's digital assistant."
 ]},
     {"tag":"pascal",
@@ -12,7 +12,7 @@
     "responses":["Christoph has already worked with various API's commonly used in these areas.\n I for one am built using Keras and NLTK in a python program.\n Furthermore he is currently attending the AI and ML track for the bachelor's degree 'Information and communication systems' which will further help with his skills and understanding in that area."
 ]},
     {"tag": "strengths",
-    "patterns": ["What are your skills","What are Christoph's skills","What is he good at", "How does he exceed","What makes him better"],
+    "patterns": ["What are your skills","What are Christoph's skills","What is he good at", "How does he exceed","What makes him better","skills"],
     "responses": ["Aside from being a capable programmer, he has a creative way of thinking as shown in his finding workarounds in the current limitations of the software packages he trains people in. Further he is also skilled at explaining complex topics to various audiences with different levels of experience in the field."
 ]},
     {"tag": "weaknesses",
@@ -32,7 +32,14 @@
 "responses":["Christoph is fluent in German and English and also speaks Spanish, albeit not fluently."
 ]},
 {"tag":"prog languages",
-"patterns":["what do you programm in","what do you code in","what programming languages do you know","what coding languages does he know"],
+"patterns":["what do you programm in","what do you code in","what programming languages do you know","what coding languages does he know","code"],
 "responses":["Privately and at work Christoph works mostly in Python, as most of the APIs he uses are made for it. From his university studies he is also familiar with C, C++ and Java and has also worked using SQL."
-]}
+]},
+{"tag": "age",
+"patterns":["how old is he?","when was he born?","what's his age","where is he from?"],
+"responses":["Christoph was born on the 24th September 93 in Vienna."]},
+{"tag": "who",
+"patterns":["who is Christoph?", "who is he?"],
+"responses":["My creator, and the person you should hire."]
+}
 ]}
