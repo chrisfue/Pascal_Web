@@ -61,6 +61,6 @@ class Chatbot:
         list_of_intents = intents_json['intents']
         for i in list_of_intents:
             if i['tag'] == tag:
-                result = i['responses']
+                result = str(i['responses'])
                 break
         return result
