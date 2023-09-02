@@ -61,6 +61,6 @@ class Chatbot:
         list_of_intents = intents_json['intents']
         for i in list_of_intents:
             if i['tag'] == tag:
-                result = str(i['responses'])
+                result = random.choice(i['responses'])
                 break
         return result
