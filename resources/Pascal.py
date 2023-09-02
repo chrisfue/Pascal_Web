@@ -14,16 +14,17 @@ class Chatbot:
 
     #initialize and load necessary files
     def __init__(self, resource_path):
-        self.lemmatizer = tf.lite.Interpreter(model_path=str(resource_path) + 'model.tflite')
+        self.model = load_model(resource_path + 'model.h5')
+       # self.lemmatizer = tf.lite.Interpreter(model_path=str(resource_path) + 'model.tflite')
         self.intents = json.loads(open(str(resource_path) + 'intents.json').read())
         self.words = pickle.load(open(str(resource_path) + 'words.pkl', 'rb'))
         self.classes = pickle.load(open(str(resource_path) + 'classes.pkl', 'rb'))
-        self.lemmatizer_nltk = WordNetLemmatizer()
+        self.lemmatizer = WordNetLemmatizer()
 
     #split text to tokens and lemmatize them
     def clean_up_sentence(self, sentence):
         sentence_words = nltk.word_tokenize(sentence)
-        sentence_words = [self.lemmatizer_nltk.lemmatize(word) for word in sentence_words]
+        sentence_words = [ self.lemmatizer.lemmatize(word) for word in sentence_words]
         return sentence_words
 
     #create bag of words
@@ -39,13 +40,9 @@ class Chatbot:
     #predict class based on processed input
     def predict_class(self, sentence):
         bow = self.bag_of_Words(sentence)
-        self.lemmatizer.allocate_tensors()
-        input_details = self.lemmatizer.get_input_details()
-        output_details = self.lemmatizer.get_output_details()
+        
 
-        self.lemmatizer.set_tensor(input_details[0]['index'], np.array([bow], dtype=np.float32))
-        self.lemmatizer.invoke()
-        res = self.lemmatizer.get_tensor(output_details[0]['index'])[0]
+        res = self.model.predict(np.array([bow]),verbose=0)[0]
 
         ERROR_THRESHOLD = 0.7
         results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
